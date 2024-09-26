@@ -96,7 +96,7 @@ def unparse_xml(d):
             'table': d['baseObject'],
         })
     return dict_to_etree({'ReportType': {
-        '@xmlns': d.pop('namespace'),
+        '@xmlns': d.pop('namespace','http://soap.sforce.com/2006/04/metadata'),
         **d,
         'sections': [
             {'columns': v, 'masterLabel': k}
